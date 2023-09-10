@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "standard-with-typescript",
+    "plugin:react/recommended",
+    "plugin:@next/next/recommended",
+    "next"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react/no-unescaped-entities": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}

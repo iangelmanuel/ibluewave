@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #000000;
+}
+
+.hero-image {
+  background-position: 50%;
+  background-image: url('/img/hero.JPG');
+  height: 80vh;
+  width: 100%;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    width: 100%;
+    margin-top: 0rem;
+    border-radius: 0px;
+    height: 50vh;
+  }
+}
