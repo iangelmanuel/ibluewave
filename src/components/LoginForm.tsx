@@ -51,7 +51,7 @@ export default function LoginForm () {
         <Input
           type="email"
           variant="bordered"
-          label="Correo Electronico"
+          label="Correo Electrónico"
           {...register('email', emailValidation)}
         />
         {(errors.email !== null) && <span className="text-sm text-red-500">{errors.email?.message as string}</span>}

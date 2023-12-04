@@ -92,11 +92,11 @@ export default function HomeContent () {
               />
               <div className="flex flex-col">
                 <p className="text-tiny text-white">¿Quieres conocer más de nuestro producto?</p>
-                <p className="text-tiny text-white">Te mostraremos mas información del producto</p>
+                <p className="text-tiny text-white">Te mostraremos más información del producto</p>
               </div>
             </div>
             <Button className="text-tiny" color="primary" radius="full" size="sm">
-              <Link href="/products">Enseñame</Link>
+              <Link href="/products">Enséñame</Link>
             </Button>
           </CardFooter>
         </Card>

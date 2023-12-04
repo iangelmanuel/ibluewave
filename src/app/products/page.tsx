@@ -1,4 +1,5 @@
 import { Image } from '@nextui-org/image'
+import HomeContent from '@/components/contents/HomeContent'
 
 export const metadata = {
   title: 'iBlue Wave - Productos',
@@ -7,38 +8,36 @@ export const metadata = {
 
 export default function ProductsPage () {
   return (
-    <article className="container mx-auto w-5/6 mb-10">
-      <section>
-        <h2 className="text-4xl font-bold text-center text-[#2E9FDB] mb-9">Productos</h2>
-      </section>
+    <>
+      <article className="z-10">
+        <HomeContent />
+      </article>
 
-      <section className="flex flex-col md:flex-row justify-center items-center gap-20">
-        <div className="w-full lg:w-[300px] space-y-2 bg-zinc-950 border border-zinc-800 p-4 rounded-xl z-10">
-          <Image
-            isZoomed
-            src="/img/product1.jpg"
-            alt="About Image"
-            className="w-full md:w-96 md:h-96 object-cover rounded-lg"
-          />
-           <h3 className="text-lg font-bold text-[#2E9FDB]">Boya Amarilla</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias neque doloremque, dolorem numquam, odit saepe accusamus, atque similique pariatur tempore sit ipsum quas error commodi ab ut voluptatem veritatis quia?
-          </p>
-        </div>
+      <article className="container mx-auto w-5/6 mb-10">
+        <section className="z-10">
+          <h2 className="text-4xl font-bold text-center text-[#2E9FDB] mb-9">Productos</h2>
+        </section>
 
-        <div className="w-full lg:w-[300px] space-y-2 bg-zinc-950 border border-zinc-800 p-4 rounded-xl z-10">
-          <Image
-            isZoomed
-            src="/img/product1.jpg"
-            alt="About Image"
-            className="w-full md:w-96 md:h-96 object-cover rounded-lg"
-          />
-          <h3 className="text-lg font-bold text-[#2E9FDB]">Boya Roja</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta impedit inventore dolorum nihil ex, itaque voluptatum quos, quia ea veritatis tempora debitis, eligendi perferendis. Numquam mollitia quos saepe? Doloremque, obcaecati!
-          </p>
-        </div>
-      </section>
-    </article>
+        <section className="container mx-auto w-5/6 lg:w-[800px] mb-10">
+          <div className="flex flex-col md:flex-row gap-9 items-center bg-zinc-950 border border-zinc-800 p-5 rounded-xl">
+            <section className="md:w-full z-10">
+              <Image
+                isZoomed
+                src="/img/product1.jpg"
+                alt="Home Image"
+                className="w-full md:w-96 md:h-96 object-cover"
+              />
+            </section>
+
+            <section className="md:w-full space-y-3 z-10">
+              <h4 className="text-2xl md:text-xl font-bold text-[#2E9FDB] mb-3 text-center lg:text-start">Nuestras Boyas</h4>
+              <p className="text-zinc-300 text-center lg:text-start">
+                Sumérgete con seguridad y estilo con la boya de <span className="text-[#EE9925] font-bold">iBlueWaveTechnology</span>. Nuestra innovadora boya no solo te mantiene visible en las aguas, sino que también ofrece <span className="text-[#EE9925] font-bold">durabilidad y practicidad</span>. Compacta, resistente a la intemperie y con compartimentos inteligentes, es la elección perfecta para buceadores que buscan una experiencia sin preocupaciones. Descubre el buceo con iBlueWaveTechnology: donde la <span className="text-[#EE9925] font-bold">seguridad</span> se encuentra con la comodidad.
+              </p>
+            </section>
+          </div>
+        </section>
+      </article>
+    </>
   )
 }

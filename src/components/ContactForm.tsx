@@ -64,14 +64,14 @@ export default function ContactForm () {
         <Input
           type="email"
           variant="bordered"
-          label="Correo Electronico"
+          label="Correo Electrónico"
           {...register('email', emailValidation)}
         />
         {(errors.email !== null) && <span className="text-sm text-red-500">{errors.email?.message as string}</span>}
         <Input
           type="phone"
           variant="bordered"
-          label="Telefono"
+          label="Teléfono"
           {...register('phone', phoneValidation)}
         />
         {(errors.phone !== null) && <span className="text-sm text-red-500">{errors.phone?.message as string}</span>}

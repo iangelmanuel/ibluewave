@@ -19,11 +19,8 @@ export default function ContactPage () {
             />
           </section>
           <section className="w-5/6 space-y-3">
-            <p className="text-zinc-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius, soluta corrupti deserunt eligendi culpa adipisci maxime nulla est ea sint voluptas dolorum placeat. Aperiam voluptatum voluptatibus quasi placeat beatae.
-            </p>
-            <p className="text-zinc-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, consequatur ratione sapiente suscipit error illo harum blanditiis labore molestias beatae esse autem architecto, molestiae ut magnam odio ea asperiores ducimus iste. Accusamus dolorem accusantium assumenda adipisci dignissimos blanditiis quisquam ad magnam quos unde doloremque esse quibusdam, repellendus possimus fugiat facere.
+            <p className="text-zinc-300 text-sm">
+              ¿Interesado en sumergirte con <span className="text-[#EE9925] font-bold">iBlueWaveTechnology</span> o tener más información? ¡Estamos aquí para responder a todas tus preguntas! Puedes contactarnos en <span className="text-[#EE9925] font-bold">ibluewavetechnology@gmail.com</span> o llamarnos al <span className="text-[#EE9925] font-bold">+57 300 802 9002</span>. También puedes visitarnos en nuestra sede en <span className="text-[#EE9925] font-bold">Barranquilla Atlántico</span>, donde estaremos encantados de recibirte y compartir nuestra pasión por el buceo y la conservación marina.
             </p>
           </section>
         </div>

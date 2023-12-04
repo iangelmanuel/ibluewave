@@ -49,7 +49,7 @@ export default function ParticlesBackground () {
         },
         particles: {
           color: {
-            value: '#fff',
+            value: '#777',
             animation: {
               enable: true,
               speed: 20,
