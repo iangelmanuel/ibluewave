@@ -1,12 +1,12 @@
-'use client'
+"use client"
 
-import { useEffect } from 'react'
-import { useBlue } from '@/hook/useBlue'
-import LoadingSpinner from '@/components/LoadingSpinner'
-import ContactAccordion from '@/components/ContactAccordion'
-import NoContacts from '@/components/NoContacts'
+import { useEffect } from "react"
+import { useBlue } from "@/hook/useBlue"
+import LoadingSpinner from "@/components/LoadingSpinner"
+import ContactAccordion from "@/components/ContactAccordion"
+import NoContacts from "@/components/NoContacts"
 
-export default function AdminDashboardPage () {
+export default function AdminDashboardPage() {
   const { loading, contacts, getContacts } = useBlue()
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function AdminDashboardPage () {
   }
 
   const numberOfContacts = contacts?.length
-  const singularOrPlural = numberOfContacts === 1 ? 'contacto' : 'contactos'
+  const singularOrPlural = numberOfContacts === 1 ? "contacto" : "contactos"
   return (
     <article className="container mx-auto w-full lg:w-5/6 lg:min-h-screen my-10 md:my-40 lg:my-0 lg:mt-10">
       <section className="mx-auto grid w-11/12">
@@ -27,24 +27,26 @@ export default function AdminDashboardPage () {
             Administra tus <span className="text-[#2E9FDB]">Contactos</span>
           </h2>
           <p className="text-base md:text-xl text-center text-[#2E9FDB] font-bold">
-            Tienes un total de: <span className="text-white">{numberOfContacts} {singularOrPlural}</span>
+            Tienes un total de:{" "}
+            <span className="text-white">
+              {numberOfContacts} {singularOrPlural}
+            </span>
           </p>
         </div>
       </section>
 
       <section className="mx-auto grid w-11/12">
-        {numberOfContacts > 0
-          ? contacts?.map((contact, index) => (
+        {numberOfContacts > 0 ? (
+          contacts?.map((contact, index) => (
             <ContactAccordion
               key={contact._id}
               contact={contact}
               index={index}
             />
           ))
-          : (
-              <NoContacts />
-            )
-        }
+        ) : (
+          <NoContacts />
+        )}
       </section>
     </article>
   )
