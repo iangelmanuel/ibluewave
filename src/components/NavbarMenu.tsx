@@ -1,15 +1,18 @@
-import Link from 'next/link'
-import { getServerSession } from 'next-auth'
-import { Image } from '@nextui-org/image'
-import { Navbar, NavbarBrand, NavbarContent } from '@nextui-org/navbar'
-import NavbarMenuItem from './NavbarMenuItem'
-import AdminNavigation from './AdminNavigation'
-import { NAVIGATION } from '@/data/navigationItems'
+import Link from "next/link"
+import { getServerSession } from "next-auth"
+import { Image } from "@nextui-org/image"
+import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/navbar"
+import NavbarMenuItem from "./NavbarMenuItem"
+import AdminNavigation from "./AdminNavigation"
+import { NAVIGATION } from "@/data/navigationItems"
 
-export default async function NavbarMenu () {
+export default async function NavbarMenu() {
   const session = await getServerSession()
   return (
-    <Navbar shouldHideOnScroll className="hidden md:flex border-b border-zinc-800">
+    <Navbar
+      shouldHideOnScroll
+      className="hidden md:flex border-b border-zinc-800"
+    >
       <NavbarBrand>
         <div className="flex gap-3 items-center">
           <Link href="/admin-login">
@@ -25,19 +28,23 @@ export default async function NavbarMenu () {
         </div>
       </NavbarBrand>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {NAVIGATION.map(item =>
+      <NavbarContent
+        className="hidden sm:flex gap-4"
+        justify="center"
+      >
+        {NAVIGATION.map((item) => (
           <NavbarMenuItem
             key={item.path}
             item={item}
           />
-        )}
+        ))}
       </NavbarContent>
 
-      <NavbarContent as="div" justify="end">
-        {session?.user?.name === 'Admin RK2' && (
-          <AdminNavigation />
-        )}
+      <NavbarContent
+        as="div"
+        justify="end"
+      >
+        {session?.user?.name === "Admin RK2" && <AdminNavigation />}
       </NavbarContent>
     </Navbar>
   )

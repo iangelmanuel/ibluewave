@@ -1,33 +1,37 @@
-'use client'
+"use client"
 
-import { useCallback } from 'react'
-import ReactParticles from 'react-particles'
-import { loadFull } from 'tsparticles'
-import type { Engine } from 'tsparticles-engine'
+import { useCallback } from "react"
+import Particles from "react-particles"
+import { loadSlim } from "tsparticles-slim"
+// import type { Engine } from ""
 
-export default function ParticlesBackground () {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine)
+export default function ParticlesBackground() {
+  const particlesInit = useCallback(async (engine: any) => {
+    await loadSlim(engine)
   }, [])
 
+  // const particlesLoaded = useCallback(async (container: any) => {
+  //   console.log(container)
+  // }, [])
+
   return (
-    <ReactParticles
+    <Particles
       id="particles"
       init={particlesInit}
       options={{
-        fpsLimit: 60,
+        fpsLimit: 120,
         background: {
-          color: '#000000'
+          color: "#000000"
         },
         interactivity: {
           events: {
             onClick: {
               enable: false,
-              mode: 'push'
+              mode: "push"
             },
             onHover: {
               enable: false,
-              mode: 'grab'
+              mode: "grab"
             },
             resize: true
           },
@@ -49,7 +53,7 @@ export default function ParticlesBackground () {
         },
         particles: {
           color: {
-            value: '#777',
+            value: "#777",
             animation: {
               enable: true,
               speed: 20,
@@ -57,15 +61,15 @@ export default function ParticlesBackground () {
             }
           },
           links: {
-            color: '#303030',
+            color: "#303030",
             distance: 200,
             enable: false
           },
           move: {
-            direction: 'top',
+            direction: "top",
             enable: true,
             outModes: {
-              default: 'out'
+              default: "out"
             },
             random: false,
             speed: 1,
@@ -79,10 +83,10 @@ export default function ParticlesBackground () {
             value: 30
           },
           opacity: {
-            value: 0.50
+            value: 0.5
           },
           shape: {
-            type: 'circle'
+            type: "circle"
           },
           size: {
             value: 3
