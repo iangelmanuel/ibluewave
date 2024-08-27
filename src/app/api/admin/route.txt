@@ -1,0 +1,81 @@
+import { NextResponse, type NextRequest } from "next/server"
+import conectDB from "@/libs/db"
+import Admin from "@/models/admin"
+import validateEmail from "@/utils/validateEmail"
+import bcryptjs from "bcryptjs"
+
+export const POST = async (req: NextRequest) => {
+  const { name, email, password } = await req.json()
+
+  if (!name || !email || !password) {
+    return NextResponse.json(
+      {
+        message: "Todos los campos son obligatorios"
+      },
+      {
+        status: 400
+      }
+    )
+  }
+
+  if (!validateEmail(email)) {
+    return NextResponse.json(
+      {
+        message: "El email no es válido"
+      },
+      {
+        status: 400
+      }
+    )
+  }
+
+  if (password.length < 8) {
+    return NextResponse.json(
+      {
+        message: "La contraseña debe tener al menos 8 caracteres"
+      },
+      {
+        status: 400
+      }
+    )
+  }
+
+  try {
+    await conectDB()
+    const userFound = await Admin.findOne({
+      email
+    })
+
+    if (userFound) {
+      return NextResponse.json(
+        {
+          message: "El usuario ya existe"
+        },
+        {
+          status: 400
+        }
+      )
+    }
+
+    const passwordHash = bcryptjs.hashSync(password, 10)
+    const userData = new Admin({
+      name,
+      email,
+      password: passwordHash
+    })
+
+    await userData.save()
+    return NextResponse.json({ message: userData }, { status: 200 })
+  } catch (error) {
+    console.log(error)
+    return NextResponse.json(
+      {
+        message: "Ha ocurrido un error al crear el usuario",
+        error
+      },
+      {
+        status: 500
+      }
+    )
+  }
+}
