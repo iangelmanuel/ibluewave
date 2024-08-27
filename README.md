@@ -1,4 +1,5 @@
 ## Proyecto para iBlue Wave Technology
+
 1. [✅] Buscar un diseño para la página de productos.
 2. [✅] Buscar un diseño para la página de contacto.
 3. [✅] Buscar un diseño para la página de nosotros.
@@ -9,7 +10,7 @@
 8. [✅] Crear una forma para que el administrador dentro de la página tenga la opción de administrar.
 9. [✅] Arreglar el responsive de la página de contacto y sobre nosotros igual a la HomePage.
 10. [✅] Agregar funcionalidad de eliminar contactos desde el panel de administrador.
-11. [] Agregar contenido real para la página web.
+11. [✅] Agregar contenido real para la página web.
 12. [✅] Buscar una base de datos online con mongodb.
 13. [✅] Mejorar el foooter.
 14. [✅] Si el usuario ya esta con la sesión iniciada, no dejarlo entrar a la página de login.
